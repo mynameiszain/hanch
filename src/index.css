@@ -327,7 +327,7 @@ font-size: 2rem;
 
 .darkbox-overlay {
   /* display: flex; */
-  visibility: hidden; 
+  /* visibility: hidden;  */
   flex-direction: column;
   position: fixed;
   align-items: center;
@@ -342,6 +342,8 @@ font-size: 2rem;
   transition: opacity 0.5s linear;
   z-index: 1000;
 }
+
+
 
 .darkbox-content {
   position: absolute;

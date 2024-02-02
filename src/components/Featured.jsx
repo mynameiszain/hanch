@@ -60,7 +60,6 @@ const Featured = () => {
                 navigation={{ prevEl: '.featured-btn-prev', nextEl: '.featured-btn-next' }}
                 centeredSlides={true}
                 autoplay={{ delay: 4000, disableOnInteraction: false }}
-                onSlideChange={(swiper) => onChange(swiper)}
               >            
               <SwiperSlide>
                 <div className="feature-card">

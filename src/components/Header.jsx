@@ -1,6 +1,11 @@
-
+import { useState } from "react";
+import Star from "./Star";
 
 const Header = () => {
+
+  const [star, setstar] = useState(false)
+
+
   return (
     <>
       <div className="siteheader-container">
@@ -140,16 +145,15 @@ const Header = () => {
               <i className="fas fa-volume-mute"></i>
             </a>
           </div>
-          <div
-            className="darkbox-starbutton"
-            data-darkbox-src="darkbox-star.html"
-          >
+          <div className="darkbox-starbutton" data-darkbox-src="darkbox-star.html" onClick={() => setstar(true)}>
             <a href="#">
               <i className="fa-regular fa-star"></i>
             </a>
           </div>
         </div>
       </div>
+
+      {star && <Star star={star} setstar={setstar} />}
     </>
   );
 };
