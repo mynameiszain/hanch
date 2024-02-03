@@ -341,6 +341,7 @@ font-size: 2rem;
   -webkit-backdrop-filter: blur(7px);
   transition: opacity 0.5s linear;
   z-index: 1000;
+  overflow-y: auto;
 }
 
 
