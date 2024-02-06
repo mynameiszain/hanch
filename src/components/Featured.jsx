@@ -107,12 +107,6 @@ const Featured = () => {
                     direction={"vertical"}
                     modules={[Autoplay, Controller]}
                     onSwiper={setControlledSwiper}
-                    loop={true}
-                    speed={500}
-                    slidesPerView={1}
-                    centeredSlides={true}
-                    spaceBetween={0}
-                    allowTouchMove={false}
                   >
                     <SwiperSlide>
                       <div className="section-featured-image1">1</div>
@@ -150,6 +144,11 @@ const Featured = () => {
               }}
               centeredSlides={true}
               autoplay={{ delay: 4000, disableOnInteraction: false }}
+              loop={true}
+              speed={500}
+              slidesPerView={1}
+              spaceBetween={0}
+              allowTouchMove={false}
             >
               <SwiperSlide>
                 <div className="feature-card">
