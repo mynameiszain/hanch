@@ -92,7 +92,7 @@ const UpcomingAppearence = () => {
   
   useEffect(() => {
     function adjustGap() {
-        const minWidth = 0; 
+        const minWidth = 350; 
         const maxWidth = 430;
         let currentWidth = window.innerWidth;
 
@@ -116,6 +116,37 @@ const UpcomingAppearence = () => {
         // Cleanup listener on component unmount
         window.removeEventListener('resize', adjustGap);
     };
+}, []);
+
+
+useEffect(() => {
+  const scaleDivs = () => {
+    const divs = document.querySelectorAll('div');
+    const maxWidth = 430;
+    let scaleRatio = window.innerWidth / maxWidth;
+
+    if (scaleRatio > 1) {
+      scaleRatio = 1;
+    }
+
+    divs.forEach(div => {
+      const style = getComputedStyle(div);
+      const isScalable = style.getPropertyValue('--custom-scalable').trim();
+
+      if (isScalable === '1') {
+        div.style.transform = `scale(${scaleRatio})`;
+      }
+    });
+  };
+
+  // Call scaleDivs initially and add event listener for window resize
+  scaleDivs();
+  window.addEventListener('resize', scaleDivs);
+
+  // Cleanup function to remove event listener
+  return () => {
+    window.removeEventListener('resize', scaleDivs);
+  };
 }, []);
   
 

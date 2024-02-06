@@ -1493,7 +1493,7 @@ color:#1A63AB;
   flex-direction: column;
   width: 100%;
   max-width: 400px;
-  /* min-width: 399px; */
+  min-width: 399px;
   height: 160px;
   color: #fff;
   padding: 20px;
