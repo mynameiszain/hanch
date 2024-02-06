@@ -143,7 +143,7 @@ const Featured = () => {
                 nextEl: ".featured-btn-next",
               }}
               centeredSlides={true}
-              autoplay={{ delay: 4000, disableOnInteraction: false }}
+              autoplay={{ delay: 6000, disableOnInteraction: false }}
               loop={true}
               speed={500}
               slidesPerView={1}
