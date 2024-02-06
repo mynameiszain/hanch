@@ -923,61 +923,30 @@ color:#1A63AB;
       height: 100%;
   }
 
-
-
-/* @media screen and (min-width: 1024px) {
-  .postcard-soapbox, .postcard-live, .postcard-music, .postcard-learn, .postcard-discover,
-  .section-background-soapbox, .section-background-live, .section-background-music, .section-background-discover
-  {
-      height: auto;
-      aspect-ratio: 16 / 9;
-      height: 100% !important;
-  }
-  .section-background-learn
-  {
-      height: auto;
-      aspect-ratio: 16 / 9;
-      height: 100% !important;
-  }
-
-  .section-background-container{
-      max-height: 800px;
-      aspect-ratio: 16 / 9;
-      height: 100%;
-  }
-} */
-
-.swiper-pagination .swiper-pagination-bullet{
-  background: black !important;
-}
-
-.swiper-pagination .swiper-pagination-bullet-active{
-  background: white !important;
-}
-
-
-
 .swiper-pagination {
   margin-bottom: 7px;
 }
 
-.section-footer-whatsup .swiper-pagination-bullet-active {
-  background-color: #fff !important;
+.section-footer-whatsup .swiper-pagination > .swiper-pagination-bullet-active {
+  background-color: #fff;
 }
 
-.section-footer-whatsup .swiper-pagination-bullet {
+.section-footer-whatsup .swiper-pagination > .swiper-pagination-bullet {
   opacity: 100%;
   background-color: #000000;
 }
 
-.section-footer-featured .swiper-pagination-bullet-active {
-  background-color: #000 !important;
+.section-footer-featured .swiper-pagination > .swiper-pagination-bullet {
+  background-color: #fff !important;
+  opacity: 100%;
 }
 
-.section-footer-featured .swiper-pagination-bullet {
+.section-footer-featured .swiper-pagination > .swiper-pagination-bullet-active {
+  background-color: #000 !important;
   opacity: 100%;
-  background-color: #fff;
 }
+
+
 
 .swiper-wrapper {
   align-items: center;
@@ -1590,12 +1559,6 @@ color:#FFD700;
       display: block;
   }
 
-  .swiper-pagination .swiper-pagination-bullet{
-    background: black !important;
-  }
   
-  .swiper-pagination .swiper-pagination-bullet-active{
-    background: white !important;
-  }
 
 }
