@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination , Navigation, Autoplay, Controller } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 
 const Header = () => {
 
@@ -14,19 +15,6 @@ const Header = () => {
     }
   }, [star]);
 
-  const darkboxSwiperConfig = {
-    direction: 'horizontal',
-    loop: false,
-    speed: 200,
-    slidesPerView: 1,
-    centeredSlides: true,
-    spaceBetween: 10,
-    allowTouchMove: true,
-    navigation: {
-      nextEl: '.darkbox-navlink-next',
-      prevEl: '.darkbox-navlink-prev',
-    },
-};
 
 
 
@@ -35,7 +23,7 @@ const Header = () => {
       <div className="siteheader-container">
         <div className="siteheader">
           <div className="logo">
-            <a href="#">
+            <Link to={'/'}>
             <svg
                 version="1.1"
                 id="Layer_1"
@@ -146,13 +134,13 @@ const Header = () => {
                   />
                 </g>
               </svg>
-            </a>
+            </Link>
           </div>
           <div id="nav-placeholder" className="nav-desktop">
             <nav className="main-nav main-nav-desktop">
-                <a href="#" className="nav-link soapbox">
+                <Link to={'soapbox'} className="nav-link soapbox">
                     <div className="icon-container"><i className="fas fa-soap"></i><span className="icon-label">SOAPBOX</span></div>
-                </a>
+                </Link>
                 <a href="#" className="nav-link live">
                     <div className="icon-container"><i className="fas fa-calendar-alt"></i><span className="icon-label">LIVE</span></div>
                 </a>
@@ -184,7 +172,7 @@ const Header = () => {
                 </div>
             </div>
             <div className="swiper darkboxSwiper">
-                <Swiper {...darkboxSwiperConfig} className="swiper-wrapper">
+                <Swiper direction="horizontal" loop={false} speed={200} slidesPerView={1} centeredSlides={true} spaceBetween={10} allowTouchMove={true} navigation={{ prevEl: ".darkbox-navlink-prev", nextEl: ".darkbox-navlink-next" }} modules={[Navigation]} className="swiper-wrapper">
                     <SwiperSlide className="swiper-slide">
                         <div className="alert">
                             <div className="alert-window-blue">

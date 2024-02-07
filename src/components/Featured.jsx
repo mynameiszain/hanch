@@ -105,8 +105,10 @@ const Featured = () => {
                   <Swiper
                     className="swiper featuredBackgroundSwiper"
                     direction={"vertical"}
-                    modules={[Autoplay, Controller]}
+                    modules={[Controller]}
                     onSwiper={setControlledSwiper}
+                    slidesPerView = {1}
+                    loop ={true}
                   >
                     <SwiperSlide>
                       <div className="section-featured-image1">1</div>
@@ -142,13 +144,15 @@ const Featured = () => {
                 prevEl: ".featured-btn-prev",
                 nextEl: ".featured-btn-next",
               }}
-              centeredSlides={true}
-              autoplay={{ delay: 6000, disableOnInteraction: false }}
-              loop={true}
-              speed={500}
-              slidesPerView={1}
-              spaceBetween={0}
-              allowTouchMove={false}
+              autoplay = {{
+                delay: 6000,
+                disableOnInteraction: false,
+              }}
+              speed = {500}
+              slidesPerView = {1}
+              mousewheelControl = {true}
+              spaceBetween= {200}
+              loop ={true}
             >
               <SwiperSlide>
                 <div className="feature-card">
@@ -181,3 +185,13 @@ const Featured = () => {
 };
 
 export default Featured;
+
+
+
+// centeredSlides={true}
+// autoplay={{ delay: 6000, disableOnInteraction: false }}
+// loop={true}
+// speed={500}
+// slidesPerView={1}
+// spaceBetween={0}
+// allowTouchMove={false}

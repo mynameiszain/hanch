@@ -95,7 +95,7 @@ const UpcomingAppearence = () => {
         const minWidth = 350; 
         const maxWidth = 430;
         let currentWidth = window.innerWidth;
-
+        console.log(currentWidth);
         currentWidth = Math.max(minWidth, Math.min(currentWidth, maxWidth));
 
         const gapSize = (30 * (currentWidth - minWidth)) / (maxWidth - minWidth);
