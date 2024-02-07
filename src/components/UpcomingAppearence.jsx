@@ -4,7 +4,6 @@ import { useEffect } from "react";
 const UpcomingAppearence = () => {
   document.addEventListener("DOMContentLoaded", function () {
     applyDottedBorder();
-    scaleDivs();
     window.addEventListener("resize", onResize);
     function onResize() {
       applyDottedBorder(); 
@@ -71,30 +70,12 @@ const UpcomingAppearence = () => {
     setTimeout(() => applyDottedBorder(), 200); 
   }, 400); 
 
-  function scaleDivs() {
-    var divs = document.querySelectorAll("div"); 
-    var maxWidth = 430; 
-    var scaleRatio = window.innerWidth / maxWidth;
-
-    if (scaleRatio > 1) {
-      scaleRatio = 1;
-    }
-    divs.forEach(function (div) {
-      var style = getComputedStyle(div);
-      var isScalable = style.getPropertyValue("--custom-scalable").trim();
-
-      if (isScalable === "1") {
-        div.style.transform = "scale(" + scaleRatio + ")";
-      }
-    });
-  }
- 
-  
   useEffect(() => {
     function adjustGap() {
         const minWidth = 350; 
         const maxWidth = 430;
         let currentWidth = window.innerWidth;
+
         currentWidth = Math.max(minWidth, Math.min(currentWidth, maxWidth));
 
         const gapSize = (30 * (currentWidth - minWidth)) / (maxWidth - minWidth);
@@ -121,6 +102,7 @@ const UpcomingAppearence = () => {
 useEffect(() => {
   const scaleDivs = () => {
     const divs = document.querySelectorAll('div');
+    const minWidth = 350;
     const maxWidth = 430;
     let scaleRatio = window.innerWidth / maxWidth;
 
@@ -128,17 +110,19 @@ useEffect(() => {
       scaleRatio = 1;
     }
 
-    divs.forEach(div => {
-      const style = getComputedStyle(div);
-      const isScalable = style.getPropertyValue('--custom-scalable').trim();
+    if (window.innerWidth >= minWidth) {
+      divs.forEach(div => {
+        const style = getComputedStyle(div);
+        const isScalable = style.getPropertyValue('--custom-scalable').trim();
 
-      if (isScalable === '1') {
-        div.style.transform = `scale(${scaleRatio})`;
-      }
-    });
+        if (isScalable === '1') {
+          div.style.transform = `scale(${scaleRatio})`;
+        }
+      });
+    }
   };
 
-  // Call scaleDivs initially and add event listener for window resize
+  // Call scaleDivs initially and add event listener for resizing
   scaleDivs();
   window.addEventListener('resize', scaleDivs);
 
@@ -147,7 +131,6 @@ useEffect(() => {
     window.removeEventListener('resize', scaleDivs);
   };
 }, []);
-  
 
   return (
     <>

@@ -5,7 +5,7 @@ import {
   Pagination,
   Navigation,
   Autoplay,
-  Thumbs,
+  Mousewheel,
   Controller,
 } from "swiper/modules";
 import "swiper/css/bundle";
@@ -137,7 +137,7 @@ const Featured = () => {
 
             <Swiper
               className="swiper featuredThumbsSwiper"
-              modules={[Autoplay, Navigation, Pagination, Controller]}
+              modules={[Autoplay, Navigation, Pagination, Controller, Mousewheel]}
               controller={{ control: controlledSwiper }}
               pagination={{ el: ".swiper-pagination", clickable: true }}
               navigation={{
@@ -150,9 +150,9 @@ const Featured = () => {
               }}
               speed = {500}
               slidesPerView = {1}
-              mousewheelControl = {true}
               spaceBetween= {200}
               loop ={true}
+              mousewheel = {true}
             >
               <SwiperSlide>
                 <div className="feature-card">
