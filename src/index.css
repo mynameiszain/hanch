@@ -155,11 +155,17 @@ color: #fff;
 /* MAIN NAVIGATION ICONS */
 
 .main-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   width: 100%;
+  height: 80px;
   background-color: #000;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  z-index: 90;
 }
 
 .nav-desktop {
@@ -269,21 +275,6 @@ font-size: 2rem;
       filter: drop-shadow(0px 0px 8px #fffbd9);
   }
 }
-
-/* Responsive */
-
-@media only screen and (max-width: 767px) {
-  .main-nav {
-      width: 100%;
-      height: 80px;
-      background-color: #000;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-  }
-}
-
-
 
 
 /* DARKBOX POPUP WINDOW */
@@ -658,10 +649,6 @@ font-size: 2rem;
 /* MAIN NAVIGATION ICONS */
 
 .main-nav {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
   width: 100%;
   height: 80px;
   background-color: #000;
@@ -1547,8 +1534,13 @@ color:#FFD700;
       justify-content: space-around;
       width: 100%;
       background-color: rgba(0,0,0,0.0);
-
+      left: 0;
+      bottom: 0;
+      right: 0;
   }
+
+
+
   body {
       margin-bottom: 0;
   }
