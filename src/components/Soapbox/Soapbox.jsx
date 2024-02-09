@@ -43,7 +43,7 @@ const SoapBox = () => {
           }}></div>
             <div className="section-background-container">
                 <div className="swiper sectionBackgroundSwiper">
-                <Swiper className="swiper-wrapper" centeredSlides={true} effect="fade"  modules={[Controller, EffectFade]} onSwiper={setControlledSwiper} >
+                <Swiper className="swiper-wrapper overflow-x-hidden" centeredSlides={true} effect="fade"  modules={[Controller, EffectFade]} onSwiper={setControlledSwiper} >
                     <SwiperSlide className="swiper-slide">
                         <div className="section-background-soapbox"></div>
                     </SwiperSlide>
