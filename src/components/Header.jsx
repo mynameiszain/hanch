@@ -9,7 +9,8 @@ const Header = () => {
 
   useEffect(() => {
     if (star) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.inset = '0';
     } else {
       document.body.style.overflow = 'unset';
     }

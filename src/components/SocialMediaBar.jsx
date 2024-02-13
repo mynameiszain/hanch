@@ -7,9 +7,10 @@ const SocialMediaBar = () => {
 
   useEffect(() => {
     if (sayhi || sayhello) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.inset = '0';
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.position = 'unset';
     }
   }, [sayhi , sayhello]);
 
