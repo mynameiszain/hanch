@@ -890,26 +890,15 @@ color:#1A63AB;
     z-index: 2;
 }
 
-.postcard-soapbox, .postcard-live, .postcard-music, .postcard-learn, .postcard-discover,
-  .section-background-soapbox, .section-background-live, .section-background-music, .section-background-discover
-  {
-      height: auto;
-      aspect-ratio: 16 / 9;
-      height: 100% !important;
-  }
+
 
   .section-background-learn
   {
-      height: auto;
-      aspect-ratio: 16 / 9;
       height: 100% !important;
   }
 
   .section-background-container{
-      max-height: 800px;
-      aspect-ratio: 16 / 9;
       height: 100%;
-      max-width: 100%;
   }
 
 .swiper-pagination {
@@ -957,9 +946,7 @@ color:#1A63AB;
   overflow: hidden;
   background-image: url('assets/images/werehome.jpg');
   background-position: center;
-  background-size: cover; /* Adjust the height */
-  /* filter: drop-shadow(30px 30px 4px rgba(0, 0, 0, 0.5));
-  outline: 2px solid #129363; */
+  background-size: cover;
 }
 
 .postcard-live {
@@ -976,9 +963,7 @@ color:#1A63AB;
   overflow: hidden;
   background-image: url('assets/images/concert.jpg');
   background-position: center;
-  background-size: cover; /* Adjust the height */
-  /* filter: drop-shadow(30px 30px 4px rgba(0, 0, 0, 0.5));
-  outline: 2px solid #129363; */
+  background-size: cover;
 }
 
 .postcard-music {
@@ -995,9 +980,7 @@ color:#1A63AB;
   overflow: hidden;
   background-image: url('assets/images/dbz.jpg');
   background-position: center;
-  background-size: cover; /* Adjust the height */
-  /* outline: 2px solid #1A63AB;
-  filter: drop-shadow(30px 30px 4px rgba(0, 0, 0, 0.5)); */
+  background-size: cover;
 }
 
 .postcard-learn {
@@ -1014,9 +997,7 @@ color:#1A63AB;
   overflow: hidden;
   background-image: url('assets/images/sheetmusic.jpg');
   background-position: center;
-  background-size: cover; /* Adjust the height */
-  /* outline: 2px solid #1A63AB;
-  filter: drop-shadow(30px 30px 4px rgba(0, 0, 0, 0.5)); */
+  background-size: cover;
 }
 
 .postcard-discover {
@@ -1033,8 +1014,7 @@ color:#1A63AB;
   overflow: hidden;
   background-image: url('assets/images/discover.jpg');
   background-position: center;
-  background-size: cover; /* Adjust the height */
-  /* outline: 2px solid #555; */
+  background-size: cover;
 }
 
 .postcard-spacer-height {
@@ -1539,7 +1519,12 @@ color:#FFD700;
       right: 0;
   }
 
-
+  .postcard-soapbox, .postcard-live, .postcard-music, .postcard-learn, .postcard-discover,
+  .section-background-soapbox, .section-background-live, .section-background-music, .section-background-discover
+  {
+      aspect-ratio: 16 / 9;
+      height: 100% !important;
+  }
 
   body {
       margin-bottom: 0;
