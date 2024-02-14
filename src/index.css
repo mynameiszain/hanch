@@ -932,6 +932,13 @@ color:#1A63AB;
 
 /* POSTCARDS */
 
+.postcard-soapbox, .postcard-live, .postcard-music, .postcard-learn, .postcard-discover,
+  .section-background-soapbox, .section-background-live, .section-background-music, .section-background-discover
+  {
+      aspect-ratio: 16 / 9;
+      height: 100% !important;
+  }
+
 .postcard-soapbox {
   display: flex;
   flex-direction: column;
@@ -1519,12 +1526,7 @@ color:#FFD700;
       right: 0;
   }
 
-  .postcard-soapbox, .postcard-live, .postcard-music, .postcard-learn, .postcard-discover,
-  .section-background-soapbox, .section-background-live, .section-background-music, .section-background-discover
-  {
-      aspect-ratio: 16 / 9;
-      height: 100% !important;
-  }
+  
 
   body {
       margin-bottom: 0;
