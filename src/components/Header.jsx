@@ -2,19 +2,40 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
+import video from '../assets/images/videoforhanch.mp4'
 
 const Header = () => {
 
   const [star, setstar] = useState(false)
+  const [count, setClickCount] = useState(0)
+  const [volume, setvolume] = useState(false)
+
+  const handleClick = (value) => {
+    let icon = document.querySelector('.nav-volume i')
+
+    if (value == 0) {
+      icon.style.color = '#FFD700';
+      setClickCount(count + 1)
+    }
+    else if(value == 1) {
+      setvolume(true);
+      setClickCount(count + 1)
+    }
+    else if(value == 2) {
+      icon.style.color = '#ccc';
+      setClickCount(0)
+    }
+  }
 
   useEffect(() => {
-    if (star) {
+    if (star || volume) {
       document.body.style.position = 'fixed';
       document.body.style.inset = '0';
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.position = 'relative';
+      document.body.style.overflow = 'auto';
     }
-  }, [star]);
+  }, [star, volume]);
 
 
 
@@ -153,15 +174,15 @@ const Header = () => {
                 </a>
             </nav>
           </div>
-          <div className="nav-volume">
-            <a href="#">
+          <div className="nav-volume" data-darkbox-src="darkbox-star.html" onClick={() => handleClick(count)}>
+            <Link>
               <i className="fas fa-volume-mute"></i>
-            </a>
+            </Link>
           </div>
           <div className="darkbox-starbutton" data-darkbox-src="darkbox-star.html" onClick={() => setstar(true)}>
-            <a href="#">
+            <Link>
               <i className="fa-regular fa-star"></i>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -248,6 +269,25 @@ const Header = () => {
                         </div>
                     </SwiperSlide>
                 </Swiper>
+            </div>
+        </div>
+
+
+        <div className="darkbox-overlay" style={{ visibility: volume && 'visible', opacity : volume && '1' }}>
+            <div className="darkbox-content">
+                <div className="darkbox-close" id="closedarkbox">
+                    <a href="#" onClick={() => setvolume(false)}><i className="fa fa-window-close" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div className="swiper darkboxSwiper">
+                <div className="popup_full_container">
+                  <div className="popup_container">
+                    {/* <video controls>
+                      <source src={video} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video> */}
+                  </div>
+                </div>
             </div>
         </div>
 

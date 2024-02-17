@@ -1,7 +1,16 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { eventData } from "../api/api";
+import { Link } from "react-router-dom";
 
 
 const UpcomingAppearence = () => {
+  const [displayCount, setDisplayCount] = useState(6);
+
+  const handleViewAllClick = () => {
+    const newDisplayCount = Math.min(displayCount + 6, eventData.length);
+    setDisplayCount(newDisplayCount);
+  };
+
   document.addEventListener("DOMContentLoaded", function () {
     applyDottedBorder();
     window.addEventListener("resize", onResize);
@@ -139,48 +148,27 @@ useEffect(() => {
           UPCOMING APPEARANCES
         </div>
         <div className="events-container">
-          <div className="event">
-            <span className="event-date-time">SAT ⋅ DEC 30, 2023 ⋅ 7:30PM</span>
-            <span className="event-name">DUNELAND JAZZ COLLECTIVE</span>
-            <span className="event-location">
-              MICHIGAN CITY, IN<span className="event-location-dot">⋅</span>
-              <span className="event-venue">ZORN BREW WORKS</span>
-            </span>
-          </div>
-          <div className="event">
-            <span className="event-date-time">FRI ⋅ FEB 9, 2024 ⋅ 8:30PM</span>
-            <span className="event-name">MORNING GLORIES</span>
-            <span className="event-location">
-              ST. JOHN, IN<span className="event-location-dot">⋅</span>
-              <span className="event-venue">NORTHWOODS FALLS</span>
-            </span>
-          </div>
-          <div className="event">
-            <span className="event-date-time">FRI ⋅ FEB 16, 2024 ⋅ 9PM</span>
-            <span className="event-name">JOE MARCINEK BAND</span>
-            <span className="event-location">
-              HAMMOND, IN
-              <span className="event-location-dot">⋅</span>
-              <span className="event-venue">EAT</span>
-            </span>
-          </div>
-          <div className="event">
-            <span className="event-date-time">SAT ⋅ APR 20, 2024 ⋅ 8PM</span>
-            <span className="event-name">HANCH & THE STARS</span>
-            <span className="event-location">
-              SCHERERVILLE, IN
-              <span className="event-location-dot">⋅</span>
-              <span className="event-venue">BUDDY N PALS</span>
-            </span>
-          </div>
+          {
+            eventData.slice(0, displayCount).map((event) => (
+              <div className="event" key={event.id}>
+                <span className="event-date-time">{event.dateTime}</span>
+                <span className="event-name">{event.name}</span>
+                <span className="event-location">{event.location}<span className="event-location-dot">⋅</span>
+                  <span className="event-venue">{event.venue}</span>
+                </span>
+              </div>
+            ))
+          }
         </div>
 
-        <div className="upcoming-appearances-viewall">
-          <a href="#">
-            <i className="fas fa-star"></i> VIEW ALL LIVE DATES{" "}
-            <i className="fas fa-star"></i>
-          </a>
-        </div>
+        
+          <div className="upcoming-appearances-viewall">
+            <Link onClick={handleViewAllClick}>
+                <i className="fas fa-star"></i> {displayCount < eventData.length ?  `VIEW ALL LIVE DATES` : `ITS ALL FOR NOW`}
+                <i className="fas fa-star"></i>
+            </Link>
+          </div>
+        
       </div>
     </>
   );
