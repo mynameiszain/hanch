@@ -149,8 +149,8 @@ useEffect(() => {
         </div>
         <div className="events-container">
           {
-            eventData.slice(0, displayCount).map((event) => (
-              <div className="event" key={event.id}>
+            eventData.slice(0, displayCount).map((event , index) => (
+              <div className="event" key={index}>
                 <span className="event-date-time">{event.dateTime}</span>
                 <span className="event-name">{event.name}</span>
                 <span className="event-location">{event.location}<span className="event-location-dot">⋅</span>

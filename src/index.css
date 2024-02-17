@@ -184,6 +184,10 @@ color: #fff;
   margin-right: 30px;
 }
 
+.nav-volume:active {
+  color : yellow;
+}
+
 .nav-volume i {
   color: #ccc;
 }
