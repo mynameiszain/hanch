@@ -31,8 +31,8 @@ const Header = () => {
       document.body.style.position = 'fixed';
       document.body.style.inset = '0';
     } else {
-      document.body.style.position = 'static';
-      document.body.style.overflow = 'auto';
+      document.body.style.position = 'relative';
+      document.body.style.overflow = 'unset';
     }
   }, [star, volume]);
 
