@@ -162,15 +162,15 @@ const Header = () => {
                 <Link to={'soapbox'} className="nav-link soapbox">
                     <div className="icon-container"><i className="fas fa-soap"></i><span className="icon-label">SOAPBOX</span></div>
                 </Link>
-                <a href="#" className="nav-link live">
+                <Link className="nav-link live">
                     <div className="icon-container"><i className="fas fa-calendar-alt"></i><span className="icon-label">LIVE</span></div>
-                </a>
-                <a href="#" className="nav-link music">
+                </Link>
+                <Link className="nav-link music">
                     <div className="icon-container"><i className="fas fa-compact-disc"></i><span className="icon-label">MUSIC</span></div>
-                </a>
-                <a href="#" className="nav-link learn">
+                </Link>
+                <Link className="nav-link learn">
                     <div className="icon-container"><i className="fas fa-graduation-cap"></i><span className="icon-label">LEARN</span></div>
-                </a>
+                </Link>
             </nav>
           </div>
           <div className="nav-volume" data-darkbox-src="darkbox-star.html" onClick={() => handleClick(count)}>
