@@ -33,11 +33,15 @@
   font-style: normal;
 }
 
-a:hover {
+.nav-volume a:hover {
   background: inherit;
   -webkit-text-fill-color: inherit;
   -webkit-background-clip: inherit;
   animation: inherit;
+}
+
+.nav-volume a:hover i {
+  background: inherit;
 }
 
 @media only screen and (max-width: 767px) {
@@ -48,6 +52,7 @@ a:hover {
       animation: inherit;
   }
 }
+
 
 ::-webkit-scrollbar {
   height: 12px;
@@ -203,7 +208,7 @@ color: #fff;
   color : yellow;
 }
 
-.nav-volume i {
+.nav-volume a {
   color: #ccc;
 }
 
@@ -695,10 +700,7 @@ font-size: 2rem;
   margin-right: 30px;
 }
 
-.nav-volume i {
 
-  color: #ccc;
-}
 
 .main-nav .nav-link {
   text-align: center;
