@@ -5,10 +5,12 @@ import { Link } from "react-router-dom";
 
 const UpcomingAppearence = () => {
   const [displayCount, setDisplayCount] = useState(6);
+  const [dropdownVisible, setDropdownVisible] = useState(false);
 
   const handleViewAllClick = () => {
     const newDisplayCount = Math.min(displayCount + 6, eventData.length);
     setDisplayCount(newDisplayCount);
+    setDropdownVisible(true);
   };
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -147,7 +149,7 @@ useEffect(() => {
         <div className="section-title-upcoming-appearances">
           UPCOMING APPEARANCES
         </div>
-        <div className="events-container">
+        <div className={`events-container ${dropdownVisible ? "show" : ""}`}>
           {
             eventData.slice(0, displayCount).map((event , index) => (
               <div className="event" key={index}>
@@ -164,7 +166,7 @@ useEffect(() => {
         
           <div className="upcoming-appearances-viewall">
             <Link onClick={handleViewAllClick}>
-                <i className="fas fa-star"></i> {displayCount < eventData.length ?  `VIEW ALL LIVE DATES` : `ITS ALL FOR NOW`}
+                <i className="fas fa-star"></i> {displayCount < eventData.length ?  `VIEW MORE LIVE DATES` : <span className="last-text">THAT'S ALL FOR NOW</span>}
                 <i className="fas fa-star"></i>
             </Link>
           </div>

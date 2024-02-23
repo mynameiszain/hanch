@@ -8,6 +8,22 @@ const Header = () => {
   const [star, setstar] = useState(false)
   const [count, setClickCount] = useState(0)
   const [volume, setvolume] = useState(false)
+  const [value, setValue] = useState(50)
+  const [showNect, setShowNect] = useState(true);
+
+  const toggleIcons = () => {
+    setShowNect(!showNect);
+  };
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+    updateRangeBackground(event.target);
+};
+
+const updateRangeBackground = (range) => {
+  const value = (range.value - range.min) / (range.max - range.min);
+  range.style.background = `linear-gradient(to right, #FFD700 0%, #FFD700 ${value * 100}%, #000 ${value * 100}%, #000 100%)`;
+};
 
   const handleClick = (value) => {
     let icon = document.querySelector('.nav-volume i')
@@ -173,12 +189,22 @@ const Header = () => {
                 </Link>
             </nav>
           </div>
-          <div className="nav-volume" data-darkbox-src="darkbox-star.html" onClick={() => handleClick(count)}>
-            <Link>
+          <div className="nav-volume" data-darkbox-src="darkbox-star.html" onClick={() => handleClick(count)}  style={{zIndex: '999999999 !important',}}>
+            {/* <Link>
               <i className="fas fa-volume-mute"></i>
+            </Link> */}
+            <Link>
+              {count === 0 ? (
+                <i className="fas fa-volume-mute" ></i>
+              ) : volume ? (
+                <i className="fas fa-volume-mute" ></i>
+              ) : (
+                <i class="fa-solid fa-volume-high" ></i>
+              )}
             </Link>
           </div>
-          <div className="darkbox-starbutton" data-darkbox-src="darkbox-star.html" onClick={() => setstar(true)}>
+          <div className="darkbox-starbutton " data-darkbox-src="darkbox-star.html" onClick={() => setstar(true)}>
+            
             <Link>
               <i className="fa-regular fa-star"></i>
             </Link>
@@ -188,6 +214,7 @@ const Header = () => {
 
       <div className="darkbox-overlay" style={{ visibility: star && 'visible', opacity : star && '1' }}>
             <div className="darkbox-content">
+
                 <div className="darkbox-close" id="closedarkbox">
                     <a href="#" onClick={() => setstar(false)}><i className="fa fa-window-close" aria-hidden="true"></i></a>
                 </div>
@@ -272,9 +299,23 @@ const Header = () => {
         </div>
 
 
-        <div className="darkbox-overlay" style={{ visibility: volume && 'visible', opacity : volume && '1' }}>
+        <div className="parentit" style={{ visibility: volume && 'visible', opacity : volume && '1' }}>
             <div className="darkbox-content">
+              
                 <div className="darkbox-close" id="closedarkbox">
+                  <div className="rt">
+                  <div id="icons">
+                        {showNect ? (
+                          <Link onClick={toggleIcons} className="nect-icon">
+                            <i class="fa-solid fa-volume-high" ></i>
+                          </Link>
+                        ) : (
+                          <Link onClick={toggleIcons} className="prev-icon">
+                            <i className="fas fa-volume-mute" ></i>
+                          </Link>
+                        )}
+                      </div>
+                  </div>
                     <a href="#" onClick={() => setvolume(false)}><i className="fa fa-window-close" aria-hidden="true"></i></a>
                 </div>
             </div>
@@ -285,9 +326,49 @@ const Header = () => {
                       <source src={video} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video> */}
+                    <div className="brd">
+                      <label className="containerr">
+                        <p className="brd-text">
+                        Music
+                        </p>
+                        <input type="checkbox" />
+                        <span className="checkmark"></span>
+                      </label>
+                      <label className="containerr">
+                        <p className="brd-text">
+                          Sound Effects
+                        </p>
+                        <input type="checkbox" />
+                        <span className="checkmark"></span>
+                      </label>
+                      <label className="range-parent">
+                      <input type="range" min="0" max="100" value={value} id="myRange" onChange={handleChange} style={{ width: '70%' }} />
+                      </label>
+                   </div>
+                  <div className="bottom-popup-content">
+                    <h4>
+                      Currently Playing
+                    </h4>
+                    <h3>
+                      [Song Name]
+                    </h3>
+                    <div className="parent-arrows">
+                    <img src="https://gagacreative.com.au/euco/wp-content/uploads/2024/02/Mediamodifier-Design.svg" width="100px" alt="Arrow" className="prev"/>
+                    <img src="https://gagacreative.com.au/euco/wp-content/uploads/2024/02/Mediamodifier-Design.svg" width="100px" alt="Arrow" className="next"/>
+                    </div>
+                  </div>
                   </div>
                 </div>
             </div>
+            <script>
+                {`
+                    var range = document.getElementById("myRange");
+                    range.oninput = function() {
+                        var value = (range.value - range.min) / (range.max - range.min);
+                        range.style.background = 'linear-gradient(to right,  0%, #FFD700 ' + (value * 100) + '%, #000 ' + (value * 100) + '%, #000 100%)';
+                    };
+                `}
+            </script>
         </div>
 
     </>

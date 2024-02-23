@@ -125,6 +125,7 @@ const Featured = () => {
             </div>
             <div className="section-title-featured">FEATURED</div>
             <div className="swiper-button-prev featured-btn-prev">
+              
               <div className="featured-button">
                 <i className="fa fa-caret-left"></i>
               </div>
@@ -179,6 +180,7 @@ const Featured = () => {
             </Swiper>
           </div>
         </div>
+        
       </div>
     </>
   );

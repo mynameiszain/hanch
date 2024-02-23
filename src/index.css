@@ -1591,3 +1591,323 @@ color:#FFD700;
     max-width: 60%;
   }
 }
+.events-container {
+  max-height: 540px;
+  overflow: hidden;
+  transition: max-height 3s ease-out;
+}
+.fas.fa-volume-mute{
+  color: #ccc !important;
+}
+.events-container.show {
+  max-height: 1500px; /* Adjust the max height as needed */
+}
+.dropdown-animation {
+  animation: dropdownAnimation 11s ease-out forwards;
+}
+
+@keyframes dropdownAnimation {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: auto;
+    opacity: 1;
+  }
+}.zind{
+  z-index: 99999999999999999999999999999999999999999999;
+  position: relative;
+}
+
+.parentit {
+  /* display: flex; */
+  opacity: 0%;
+  visibility: hidden; 
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+  top: -80px;
+  right: 130px;
+  height: 350px;
+  width: 300px !important;
+  background-color: #79797970; /* Semi-transparent black for visibility */
+  z-index: 5000;
+  backdrop-filter: blur(42px);
+  -webkit-backdrop-filter: blur(36px);
+  transition: opacity 0.5s linear;
+  overflow-y: auto;
+  border-radius: 18px;
+}
+@media screen and (max-width:1200px){
+  
+.parentit {
+  /* display: flex; */
+  opacity: 0%;
+  visibility: hidden; 
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+  top: -80px;
+  right: 30px;
+  height: 350px;
+  width: 300px !important;
+  background-color: #79797970; /* Semi-transparent black for visibility */
+  z-index: 5000;
+  backdrop-filter: blur(42px);
+  -webkit-backdrop-filter: blur(36px);
+  transition: opacity 0.5s linear;
+  overflow-y: auto;
+  border-radius: 18px;
+}
+}
+@media screen and (max-width:900px){
+  
+  .parentit {
+    right: 16px !important;
+  }
+  }
+.parentit  .popup_container{
+  margin-top: 40px;
+}
+
+
+.rt .fa-volume-mute,.rt .fa-volume-high{
+  position: absolute;
+  font-size: 24px;
+  right: 82px;
+  top: 5px;
+}
+.rt .fa-volume-high{
+  color:#FFD700;
+}
+
+
+
+
+.darkbox-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 1000px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  padding: 0px 15px 0px 15px;
+}
+
+.darkbox-close a {
+  position: absolute;
+  color: #FF461E;
+  text-decoration: none;
+font-size: 2rem;
+  right: 27px;
+  top: 22px;
+  z-index: 50;
+  filter: drop-shadow(0px 0px 5px #000000);
+}
+
+.darkbox-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+.darkbox-section-container {
+  display: flex;
+  flex-direction: column;
+  border: 3px dashed #777; /* Thick, dashed border */
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  max-width: 350px;
+  margin-bottom: 10px;
+  width: 100%;
+  background-color: rgba(70, 70, 70, 0.5);
+  /* background-image: linear-gradient(to bottom, #444, #999); */
+  padding: 20px;
+}
+
+.popup_container{
+  min-width: 100%;
+  padding-top: 30px;
+}
+
+.containerr {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  align-items: center;
+}
+
+/* Hide the browser's default checkbox */
+.containerr input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 5px;
+  left: 12px;
+  height: 16px;
+  width: 16px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.containerr:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.containerr input:checked ~ .checkmark {
+  background-color: #FFD700;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.containerr input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.containerr .checkmark:after {
+  left: 5px;
+  top: 2px;
+  width: 3px;
+  height: 7px;
+  border: solid #000;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}.brd{
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f2f2f2 !important;
+}
+.bottom-popup-content{
+  padding-top: 20px;
+}
+.bottom-popup-content h4{
+  text-align: center;
+}
+.bottom-popup-content h3{
+  text-align: center;
+}
+.parent-arrows{
+  text-align: center;
+  margin-top: 20px;
+}
+.parent-arrows svg{
+  width: 32px;
+  margin:0 40px;
+}
+.last-text{
+  background: #1B1B1B -webkit-linear-gradient(left, #707070, #FFF) repeat -2em 0 / 50%;
+  -webkit-text-fill-color:transparent;
+  -webkit-background-clip: text;
+  animation: LightSweep 0.5s infinite ease-in;
+}
+.last-text:hover{
+  cursor: text;
+}
+.fa-caret-right{
+  position: absolute;
+  left: -18px;
+  top: -13px;
+}
+.fa-caret-left{
+  position: absolute;
+  right: -24px;
+  top: -2px;
+}
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(to right, #FFD700 0%, #FFD700 50%, #000 50%, #000 100%); /* Red and yellow track */
+  outline: none;
+  border-radius: 5px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #FFD700; /* Yellow thumb */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+  background: #FFD700; /* Change color on hover if needed */
+}
+.brd-text{
+  font-size: 16px;
+  padding-top: 5px;
+  color: #fff;
+}
+.range-parent{
+  display: block;
+  width: 100% !important;
+  text-align: center !important;
+  padding: 10px 0;
+}
+.bottom-popup-content h4{
+  color: #ffffff8a;
+  font-weight: 600;
+  font-size: 16px;
+}
+.bottom-popup-content h3{
+  color: #fff;
+  font-size: 16px;
+}
+.parent-arrows{
+  position: relative;
+}
+.next{
+  position: absolute;
+  right: 20px;
+  top: -40px;
+}
+.prev{
+  position: absolute;
+  transform: scaleX(-1);
+  left: 20px;
+  top: -40px;
+}
+.rt a:hover {
+  background: inherit;
+  -webkit-text-fill-color: inherit;
+  -webkit-background-clip: inherit;
+  animation: inherit;
+}
