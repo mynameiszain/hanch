@@ -167,7 +167,7 @@ useEffect(() => {
           <div className="upcoming-appearances-viewall">
             <Link onClick={handleViewAllClick}>
                 <i className="fas fa-star"></i> {displayCount < eventData.length ?  `VIEW MORE LIVE DATES` : <span className="last-text">THAT'S ALL FOR NOW</span>}
-                <i className="fas fa-star"></i>
+                <i className="fas fa-star just-spac"></i>
             </Link>
           </div>
         
