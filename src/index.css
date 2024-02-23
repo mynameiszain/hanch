@@ -1841,13 +1841,13 @@ font-size: 2rem;
 }
 .fa-caret-right{
   position: absolute;
-  left: -18px;
-  top: -13px;
+  left: -29px;
+  top: -10px;
 }
 .fa-caret-left{
   position: absolute;
-  right: -24px;
-  top: -2px;
+  right: -29px !important;
+  top: -10px;
 }
 input[type=range] {
   -webkit-appearance: none;
