@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { SlideDown } from 'react-slidedown';
-
 import { eventData } from "../api/api";
 import { Link } from "react-router-dom";
 
