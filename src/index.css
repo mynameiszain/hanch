@@ -1606,7 +1606,7 @@ color:#FFD700;
 }
 @media screen and (max-width:767px){
   .events-container {
-    max-height: 1000px;
+    max-height: 2000px;
     overflow: hidden;
     transition: max-height 2s ease-out; /* Add transition for max-height */
   }
