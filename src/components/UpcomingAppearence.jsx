@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
+import { SlideDown } from 'react-slidedown';
+import 'react-slidedown/lib/slidedown.css';
 import { eventData } from "../api/api";
 import { Link } from "react-router-dom";
 
@@ -149,20 +151,17 @@ useEffect(() => {
         <div className="section-title-upcoming-appearances">
           UPCOMING APPEARANCES
         </div>
-        <div className={`events-container ${dropdownVisible ? "show" : ""}`}>
-          {
-            eventData.slice(0, displayCount).map((event , index) => (
-              <div className="event" key={index}>
-                <span className="event-date-time">{event.dateTime}</span>
-                <span className="event-name">{event.name}</span>
-                <span className="event-location">{event.location}<span className="event-location-dot">⋅</span>
-                  <span className="event-venue">{event.venue}</span>
-                </span>
-              </div>
-            ))
-          }
-        </div>
-
+        <SlideDown className={`events-container ${dropdownVisible ? "show" : ""}`}>
+        {eventData.slice(0, displayCount).map((event, index) => (
+          <div className="event" key={index}>
+            <span className="event-date-time">{event.dateTime}</span>
+            <span className="event-name">{event.name}</span>
+            <span className="event-location">{event.location}<span className="event-location-dot">⋅</span>
+              <span className="event-venue">{event.venue}</span>
+            </span>
+          </div>
+        ))}
+      </SlideDown>
         
           <div className="upcoming-appearances-viewall">
             <Link onClick={handleViewAllClick}>

@@ -199,9 +199,13 @@ color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   color: #fff;
   font-size: 1.5rem;
   margin-right: 30px;
+}
+.nav-volume a{
+   z-index: 99999999 !important;
 }
 
 .nav-volume:active {
@@ -380,7 +384,7 @@ font-size: 2rem;
   color: #FF461E;
   text-decoration: none;
 font-size: 2rem;
-  right: 27px;
+  right: 50px !important;
   top: 22px;
   z-index: 50;
   filter: drop-shadow(0px 0px 5px #000000);
@@ -1594,16 +1598,21 @@ color:#FFD700;
 .events-container {
   max-height: 540px;
   overflow: hidden;
-  transition: max-height 3s ease-out;
+  transition: max-height 2s ease-out; /* Add transition for max-height */
 }
-.fas.fa-volume-mute{
-  color: #ccc !important;
-}
+
 .events-container.show {
   max-height: 1500px; /* Adjust the max height as needed */
 }
+
+
+
+
+.fas.fa-volume-mute{
+  color: #ccc !important;
+}
 .dropdown-animation {
-  animation: dropdownAnimation 11s ease-out forwards;
+  animation: none;
 }
 
 @keyframes dropdownAnimation {
@@ -1627,8 +1636,8 @@ color:#FFD700;
   flex-direction: column;
   position: absolute;
   align-items: center;
-  top: -80px;
-  right: 130px;
+  top: 0px;
+  right: 121px;
   height: 350px;
   width: 300px !important;
   background-color: #79797970; /* Semi-transparent black for visibility */
