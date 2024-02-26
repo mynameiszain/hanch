@@ -1602,7 +1602,18 @@ color:#FFD700;
 }
 
 .events-container.show {
-  max-height: 1500px; /* Adjust the max height as needed */
+  max-height: 4000px; /* Adjust the max height as needed */
+}
+@media screen and (max-width:767px){
+  .events-container {
+    max-height: 1000px;
+    overflow: hidden;
+    transition: max-height 2s ease-out; /* Add transition for max-height */
+  }
+  
+  .events-container.show {
+    max-height: 50000px; /* Adjust the max height as needed */
+  }
 }
 
 
