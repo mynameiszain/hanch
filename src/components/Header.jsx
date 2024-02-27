@@ -200,7 +200,8 @@ const updateRangeBackground = (range) => {
               )}
             </Link>
           </div>
-          <div className="parentit" style={{ visibility: volume && 'visible', opacity : volume && '1' }}>
+                <div className="p-parentit">
+                <div className="parentit" style={{ visibility: volume && 'visible', opacity : volume && '1' }}>
             <div className="darkbox-content">
               
                 <div className="darkbox-close" id="closedarkbox">
@@ -254,6 +255,7 @@ const updateRangeBackground = (range) => {
                 `}
             </script>
         </div>
+                </div>
           <div className="darkbox-starbutton " data-darkbox-src="darkbox-star.html" onClick={() => setstar(true)}>
             
             <Link>
