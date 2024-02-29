@@ -43,14 +43,14 @@ const updateRangeBackground = (range) => {
   }
 
   useEffect(() => {
-    if (star || volume) {
+    if (star) {
       document.body.style.position = 'fixed';
       document.body.style.inset = '0';
     } else {
       document.body.style.position = 'relative';
       document.body.style.overflow = 'unset';
     }
-  }, [star, volume]);
+  }, [star]);
 
 
 
@@ -205,7 +205,7 @@ const updateRangeBackground = (range) => {
             <div className="darkbox-content">
               
                 <div className="darkbox-close" id="closedarkbox">
-                    <a href="#" onClick={() => setvolume(false)}><i className="fa fa-window-close" aria-hidden="true"></i></a>
+                    <Link to="#" onClick={() => setvolume(false)}><i className="fa fa-window-close" aria-hidden="true"></i></Link>
                 </div>
             </div>
             <div className="swiper darkboxSwiper">

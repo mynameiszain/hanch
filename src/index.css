@@ -1598,7 +1598,7 @@ color:#FFD700;
 .events-container {
   max-height: 540px;
   overflow: hidden;
-  transition: max-height 2s ease-out; /* Add transition for max-height */
+  transition: max-height 0.5s ease-out; /* Add transition for max-height */
 }
 
 .events-container.show {
@@ -1608,7 +1608,7 @@ color:#FFD700;
   .events-container {
     max-height: 2000px;
     overflow: hidden;
-    transition: max-height 2s ease-out; /* Add transition for max-height */
+    transition: max-height 0.5s ease-out; /* Add transition for max-height */
   }
   
   .events-container.show {
@@ -1650,7 +1650,7 @@ color:#FFD700;
   flex-direction: column;
   position: absolute;
   align-items: center;
-  top: -40px;
+  top: -30px;
   right: -85px;
   height: 350px;
   width: 300px !important;
@@ -1669,16 +1669,19 @@ color:#FFD700;
   }
   .darkbox-close a {
     right: 20px !important;
+    top:13px !important;
   }
 }
-@media screen and (max-width:900px){
-  
-
-
+@media screen and (min-width:1080px){
+  .parentit {
+    right: -50px !important;
   }
-  @media screen and (max-width:1024px){
-
+  .darkbox-close a {
+    right: 20px !important;
+    top:13px !important;
   }
+}
+
 .parentit  .popup_container{
   margin-top: 40px;
 }
@@ -1843,10 +1846,12 @@ font-size: 2rem;
   margin:0 40px;
 }
 .last-text{
-  background: #1B1B1B -webkit-linear-gradient(left, #707070, #FFF) repeat -2em 0 / 50%;
-  -webkit-text-fill-color:transparent;
-  -webkit-background-clip: text;
-  animation: LightSweep 0.5s infinite ease-in;
+  background: none;
+  -webkit-text-fill-color: initial;
+  -webkit-background-clip: border-box;
+  animation: none;
+  color: grey;
+  
 }
 .last-text:hover{
   cursor: text;
